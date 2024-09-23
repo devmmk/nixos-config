@@ -91,7 +91,7 @@
   users.users.penguin = {
     isNormalUser = true;
     description = "penguin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -106,7 +106,19 @@
     enable = true;
     platformTheme = "gtk2";
   };
-  programs.zsh.enable = true;
+
+  # Virtualisation
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
+  environment.systemPackages = [ pkgs.virt-manager ];
+  programs = {
+    zsh.enable = true;
+    dconf.enable = true;
+    virt-manager.enable = true;
+  };
+
   system.stateVersion = "24.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

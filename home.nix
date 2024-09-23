@@ -54,6 +54,14 @@
     platformTheme.name = "gtk2";
   };
 
+  # virt-manager
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
+    };
+  };
+
   programs.gpg.enable = true;
   services.gpg-agent.enable = true;
   home.stateVersion = "24.05";
