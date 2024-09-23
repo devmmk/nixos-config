@@ -18,5 +18,6 @@
     nekoray
     spotify
     cinnamon.warpinator
+    vlc
   ];
 }
