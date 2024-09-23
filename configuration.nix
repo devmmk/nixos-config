@@ -14,10 +14,28 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.copyKernels = true;
+  boot.loader.grub.efiInstallAsRemovable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.devices = [ "nodev" ];
+  boot.loader.grub.dedsec-theme = {
+    enable = true;
+    style = "stalker";
+    icon = "color";
+    resolution = "1080p";
+  };
+  boot.loader.grub.extraEntries = ''
+    menuentry "Reboot" {
+      reboot
+    }
+    menuentry "Poweroff" {
+      halt
+    }
+  '';
 
-  networking.hostName = "nixos"; # Define your hostname.
+   # Define your hostname.
+  networking.hostName = "nixos";
+  networking.nameservers = [ "8.8.8.8" "8.4.4.8" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -89,7 +107,6 @@
     platformTheme = "gtk2";
   };
   programs.zsh.enable = true;
-  networking.nameservers = [ "8.8.8.8" "8.4.4.8" ];
   system.stateVersion = "24.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

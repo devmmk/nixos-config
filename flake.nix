@@ -7,9 +7,13 @@
       url = "github:/nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dedsec-grub-theme = {
+      url = gitlab:VandalByte/dedsec-grub-theme;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, dedsec-grub-theme, ... }:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -18,7 +22,10 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ 
+          dedsec-grub-theme.nixosModule
+          ./configuration.nix
+        ];
       };
     };
 
