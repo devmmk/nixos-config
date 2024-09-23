@@ -121,6 +121,8 @@
     fira-code-symbols
     cantarell-fonts
     roboto
+    vazir-fonts
+    vazir-code-fonts
 
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" ]; })
 
