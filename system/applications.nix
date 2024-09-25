@@ -20,5 +20,8 @@
     cinnamon.warpinator
     vlc
     kdeconnect
+    android-tools
+    heimdall
+    scrcpy
   ];
 }
