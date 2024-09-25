@@ -10,7 +10,6 @@
       ./hardware-configuration.nix
       ./xfce.nix
       ./applications.nix
-      ./nvim.nix
     ];
 
   # Bootloader.
