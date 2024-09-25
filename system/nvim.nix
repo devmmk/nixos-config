@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
-    environment.packages = with pkgs; [
+    environment.packages = with pkgs.vimPlugins; [
         neovim
-        vimplugin-lightline.vim
-        vimplugin-tokyonight.nvim
+        lightline.vim
+        tokyonight.nvim
     ];
 
     programs.neovim = {
