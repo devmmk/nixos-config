@@ -1,12 +1,6 @@
 { config, pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
-        neovim
-        vimPlugins.lightline-vim
-        vimPlugins.tokyonight-nvim
-    ];
-
     programs.neovim = {
         enable = true;
         plugins = with pkgs.vimPlugins; [
