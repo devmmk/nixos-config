@@ -12,7 +12,10 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    shellAliases = { ls = "lsd"; };
+    shellAliases = {
+      ls = "lsd";
+      vim = "nvim";
+    };
     oh-my-zsh = {
       enable = true;
       theme = "half-life";
