@@ -19,5 +19,6 @@
     spotify
     cinnamon.warpinator
     vlc
+    kdeconnect
   ];
 }
