@@ -24,7 +24,7 @@
         inherit system;
         modules = [ 
           dedsec-grub-theme.nixosModule
-          ./configuration.nix
+          ./system/configuration.nix
         ];
       };
     };
@@ -32,7 +32,7 @@
     homeConfigurations = {
       penguin = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./user/home.nix ];
       };
     };
 
