@@ -23,5 +23,6 @@
     android-tools
     heimdall
     scrcpy
+    python312Full
   ];
 }
