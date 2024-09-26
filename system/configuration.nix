@@ -13,25 +13,19 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.copyKernels = true;
-  boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.devices = [ "nodev" ];
-  boot.loader.grub.dedsec-theme = {
+  boot.loader.grub = {
     enable = true;
-    style = "stalker";
-    icon = "color";
-    resolution = "1080p";
+    copyKernels = true;
+    efiInstallAsRemovable = true;
+    efiSupport = true;
+    devices = [ "nodev" ];
+    dedsec-theme = {
+      enable = true;
+      style = "stalker";
+      icon = "color";
+      resolution = "1080p";
+    };
   };
-  boot.loader.grub.extraEntries = ''
-    menuentry "Reboot" {
-      reboot
-    }
-    menuentry "Poweroff" {
-      halt
-    }
-  '';
 
    # Define your hostname.
   networking.hostName = "nixos";
@@ -55,14 +49,14 @@
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" "intel" ];
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    displayManager.lightdm.enable = true;
+    desktopManager.xfce.enable = true;
+    videoDrivers = [ "nvidia" "intel" ];
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
   # Enable CUPS to print documents.

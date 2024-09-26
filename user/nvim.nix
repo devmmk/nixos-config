@@ -12,9 +12,9 @@ set laststatus=2
 set number
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'background': 'dark'
-      \ }
+\ 'colorscheme': 'one',
+\ 'background': 'dark'
+\ }
 colorscheme tokyonight-night
         '';
     };
